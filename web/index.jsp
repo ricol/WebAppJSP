@@ -17,50 +17,60 @@
             pageContext.getRequest().setAttribute("PreviousURL",
                 request.getRequestURI());
         %>
-        <a href="MySelf.jsp">About Me</a>
-        <a href="References.jsp">References</a>
-        <!-- Be careful this doesn't work:  -->
-        <!-- <a href = "/servlet/MainServlet?parameter1=wangxinghe&parameter2=29">MainServlet</a> -->
-        <a href="servlet/MainServlet?parameter1=wangxinghe&parameter2=29">MainServlet</a>
-        <a href="GetPostTest.jsp">GetFormFieldsServlet</a>
-        <a href="DateTime.jsp">DateTime</a>
-        <a href="CountTest.jsp">CountTest</a>
-        <a href="JavaBeanTest.jsp">JavaBean</a>
-        <a href="ClassesTest.jsp">JavaClasses</a>
-        <a href="MyTagsTest.jsp">CustomTags</a>
-        <a href="DataBaseTest.jsp">DataBase</a>
-        <a href="SessionTest.jsp">Session</a>
-        <a href="Application1/shoppingcart.jsp">ShoppingCart</a>
-        <a href="Application2/Catalog.jsp">Shop</a>
-        <a href="ApplicationObjectTest.jsp">ApplicationObject</a>
-        <a href="HelloWorldFilter">Filter</a>
-        <a href="ShowCookies.jsp">ShowCookies</a>
-        <a href="ShowSessions.jsp">ShowSessions</a>
-        <a href="ShowHeaders.jsp">ShowHeaders</a>
-        <a href="servlet/ShowHeaders">ShowHeaders</a>
-        <a href="FileUpload.jsp">FileUpload</a>
-        <a href="servlet/ServletToServlet_1">ServletToServlet</a>
-        <a href="JSP_Forward.jsp">JSP_Forward</a>
-        <a href="jstl_demo.jsp">JSTL</a>
-        <hr />
-        <%
-            int i = 1;
-            String text = "Welcome to the JSP World!";
-            //String reverseText = reverseString(text);
-            for (i = 1; i <= 6; i++)
-            {
-                out.print("<h" + i + " align = \"left\">" + text + "</h" + i
-                    + ">");
-                //out.print("<h" + i + " align = \"right\">" + reverseText + "</h" + i + ">");
-                out.print("<br />");
-            }
-        %>
+        <ul>
+            <li>
+                <a href="MySelf.jsp">About Me</a></li>
+            <li> <a href="References.jsp">References</a></li>
+            <!-- Be careful this doesn't work:  -->
+            <!-- <a href = "/servlet/MainServlet?parameter1=wangxinghe&parameter2=29">MainServlet</a> -->
+            <li>Servlets
+                <ul>
+                    <li><a href="servlet/MainServlet?parameter1=wangxinghe&parameter2=29">MainServlet</a></li>
+                    <li> <a href="servlet/MainServletWithFilter?parameter1=wangxinghe&parameter2=29">MainServletWithFilter</a></li>
+                    <li> <a href="servlet/ShowHeaders">ShowHeaderViaServlets</a></li>
+                    <li> <a href="servlet/ServletToServlet_1">ServletToServlet</a></li>
+                    <li> <a href="GetPostTest.jsp">GetFormFieldsServlet</a></li>
+                </ul>
+            </li>
 
-        <h2>
-            <%
-                out.println("Parameter of name: " + request.getParameter("name"));
-            %>
-        </h2>
+            <li> <a href="DateTime.jsp">DateTime</a></li>
+            <li> <a href="CountTest.jsp">CountTest</a></li>
+            <li> <a href="JavaBeanTest.jsp">JavaBean</a></li>
+            <li> <a href="ClassesTest.jsp">JavaClasses</a></li>
+            <li> <a href="MyTagsTest.jsp">CustomTags</a></li>
+            <li>Database
+                <ul>
+                    <li>MySQL
+                        <ul>
+                            <li><a href = "DataBase/MySQLTest.jsp">JavaClassToAccessMySQL</a></li>
+                            <li><a href = "servlet/MySQLServlet">ServletToAccessMySQL</a></li>
+                        </ul>
+                    </li>
+                    <li>SQL Server
+                        <ul>
+                            <li><a href = "DataBase/SQLServerTest.jsp">JavaClassToAccessSQLServer</a></li>
+                            <li><a href = "servlet/SQLServerServlet">ServletToAccessSQLServer</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li> <a href="SessionTest.jsp">Session</a></li>
+            <li> <a href="Application1/shoppingcart.jsp">ShoppingCart</a></li>
+            <li> <a href="Application2/Catalog.jsp">Shop</a></li>
+            <li> <a href="ApplicationObjectTest.jsp">ApplicationObject</a></li>
+            <li> <a href="ShowCookies.jsp">ShowCookies</a></li>
+            <li> <a href="ShowSessions.jsp">ShowSessions</a></li>
+            <li> <a href="ShowHeaders.jsp">ShowHeaders</a></li>
+
+            <li> <a href="FileUpload.jsp">FileUpload</a></li>
+
+            <li> <a href="JSP_Forward.jsp">JSP_Forward</a></li>
+            <li> <a href="jstl_demo.jsp">JSTL</a></li>
+            <li>  <a href="Error.jsp">ERROR</a></li>
+            <li> <a href="Redirect.jsp">Redirect</a></li>
+            <li>  <a href="Autorefresh.jsp">AutoRefresh</a></li>
+        </ul>
+        <hr />
 
         <jsp:include page="common/footer.jsp">
             <jsp:param name="FamilyName" value="Wang" />

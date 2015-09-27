@@ -15,11 +15,11 @@
             if (tmpSQLServerConnection.IsConnected())
             {
                 tmpSQLServerConnection
-                    .Connect("usertrends", "root", "mysql@1");
+                    .Connect("db", "root", "");
                 if (tmpSQLServerConnection.IsConnected())
                 {
                     tmpSQLServerConnection
-                        .ExecuteSQL("Select * from mainlogs limit 10");
+                        .ExecuteSQL("Select * from contacts limit 10");
                     out.print(tmpSQLServerConnection.getResult());
                     tmpSQLServerConnection.Close();
                 } else
