@@ -276,8 +276,13 @@ public class MainServlet extends HttpServlet
     }
 
     /**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      * @see HttpServlet#doOptions(HttpServletRequest, HttpServletResponse)
      */
+    @Override
     protected void doOptions(HttpServletRequest request,
         HttpServletResponse response) throws ServletException, IOException
     {
@@ -287,8 +292,13 @@ public class MainServlet extends HttpServlet
     }
 
     /**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      * @see HttpServlet#doTrace(HttpServletRequest, HttpServletResponse)
      */
+    @Override
     protected void doTrace(HttpServletRequest request,
         HttpServletResponse response) throws ServletException, IOException
     {

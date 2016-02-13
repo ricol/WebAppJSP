@@ -52,7 +52,7 @@ public class MySQLServlet extends HttpServlet
         out.print("<body>");
         out.println("<a href = \"../index.jsp\">HOME</a>");
         out.println("<hr />");
-        String connectionURL = "jdbc:mysql://localhost:3306/usertrends";
+        String connectionURL = "jdbc:mysql://localhost:3306/db";
         Connection connection = null;
         Statement statement = null;
         ResultSet resultset = null;
@@ -62,10 +62,10 @@ public class MySQLServlet extends HttpServlet
             try
             {
                 connection = DriverManager.getConnection(connectionURL, "root",
-                    "mysql@1");
+                    "");
                 statement = connection.createStatement();
                 resultset = statement
-                    .executeQuery("select * from mainlogs limit 10");
+                    .executeQuery("select * from contacts limit 10");
                 out.print("<ui>");
                 int column_number = resultset.getMetaData().getColumnCount();
                 while (resultset.next())
